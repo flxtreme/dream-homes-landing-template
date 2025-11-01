@@ -7,7 +7,7 @@ A modern, high-converting real estate funnel landing template built with **Vanil
 ## Folder Structure
 
 ```
-DreamHome/
+root/
 ├─ index.html
 └─ thank-you/
    └─ index.html
@@ -18,10 +18,6 @@ DreamHome/
 ## How to Run Locally
 
 1. **Open a terminal** and navigate to the project folder:
-
-```bash
-cd /path/to/DreamHome
-```
 
 2. **Start a local Python server**:
 
