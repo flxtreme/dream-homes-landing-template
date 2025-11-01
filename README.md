@@ -47,3 +47,5 @@ http://localhost:8000/
 
 * Sliders
 * Parallax Hero
+* Thank You Page
+* Responsive
