@@ -2,6 +2,8 @@
 
 A modern, high-converting real estate funnel landing template built with **Vanilla HTML, JavaScript, and TailwindCSS via CDN**, designed to showcase properties and capture leads effortlessly.
 
+![Preview](preview.png)
+
 ---
 
 ## Folder Structure
@@ -41,7 +43,7 @@ http://localhost:8000/
 
 ---
 
-## Notes
+## Features
 
-* Ensure both `index.html` and `thank-you/index.html` exist in their respective locations.
-* All styles and scripts are included via **CDN**, so no additional setup is required.
+* Sliders
+* Parallax Hero
