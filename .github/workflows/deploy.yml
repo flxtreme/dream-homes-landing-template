@@ -3,7 +3,7 @@ name: Deploy DreamHome to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change if your default branch is different
+      - master
 
 jobs:
   deploy:
