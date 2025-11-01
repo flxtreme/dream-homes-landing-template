@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DreamHomes | Find Your Perfect Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Momo+Trust+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+      font-family: "Lato", sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button {
+      font-family: "Poppins", sans-serif;
+    }
+
+
+
+    .font-poppins {
+      font-family: "Poppins", sans-serif;
+    }
+    
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .hero-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+    
+    .hero-slide.active {
+      opacity: 1;
+    }
+    
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .slider-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .slider-item {
+      flex: 0 0 100%;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    
+    @media (min-width: 640px) {
+      .property-slider .slider-item {
+        flex: 0 0 50%;
+      }
+      .why-slider .slider-item {
+        flex: 0 0 50%;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .property-slider .slider-item {
+        flex: 0 0 33.333%;
+      }
+      .why-slider .slider-item {
+        flex: 0 0 33.333%;
+      }
+    }
+    
+    .dots-container {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .dot.active {
+      background: white;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900">
+
+<!-- HERO -->
+<section id="hero" class="relative w-full py-20 md:min-h-[60vh] lg:min-h-screen flex items-center justify-center overflow-hidden">
+  <div class="fixed inset-0 z-0 hero-slider h-full overflow-hidden">
+    <div class="hero-slide active">
+      <img
+        src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=1920&q=80"
+        alt="Modern home exterior"
+      />
+    </div>
+    <div class="hero-slide">
+      <img
+        src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1920&q=80"
+        alt="Luxury house"
+      />
+    </div>
+    <div class="hero-slide">
+      <img
+        src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1920&q=80"
+        alt="Poolside villa"
+      />
+    </div>
+  </div>
+
+  <div class="absolute inset-0 bg-black/50 z-10"></div>
+  <div class="relative z-20 text-center px-6 max-w-3xl">
+    <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4 max-w-xl mx-auto">
+      Discover Homes That Inspire
+    </h1>
+    <p class="text-lg md:text-xl text-white/90 mb-8">
+      Luxury, comfort, and modern living — find a home that truly fits your lifestyle.
+    </p>
+    <a
+      href="#lead"
+      class="inline-block px-10 py-4 text-lg font-semibold text-white rounded-full
+            backdrop-blur-md bg-white/10 border-2 border-white/20
+            shadow-[0_4px_30px_rgba(255,255,255,0.1)]
+            hover:bg-white/20 hover:border-white/30
+            hover:shadow-[0_0_25px_rgba(255,255,255,0.25)]
+            transition-all duration-300">
+      Book a Private Viewing
+    </a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why" class="relative py-16 z-10 bg-black/50 text-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-10">Why Choose DreamHomes?</h2>
+    <div class="slider-container why-slider pb-8 -mb-8">
+      <div class="slider-track">
+        <div class="slider-item">
+          <div class="min-h-64 backdrop-blur-md bg-white/10 border-2 border-white/20 transition-all duration-300 p-6">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Expert Agents" class="w-16 h-16 mx-auto mb-4"/>
+            <h3 class="font-semibold text-lg mb-2">Expert Agents</h3>
+            <p class="opacity-50">Our licensed professionals guide you through every step of your property journey.</p>
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="min-h-64 backdrop-blur-md bg-white/10 border-2 border-white/20 transition-all duration-300 p-6">
+            <img src="https://cdn-icons-png.flaticon.com/512/3617/3617245.png" alt="Verified Listings" class="w-16 h-16 mx-auto mb-4"/>
+            <h3 class="font-semibold text-lg mb-2">Verified Listings</h3>
+            <p class="opacity-50">We only showcase verified and up-to-date properties for your peace of mind.</p>
+          </div>
+        </div>
+        <div class="slider-item">
+          <div class="min-h-64 backdrop-blur-md bg-white/10 border-2 border-white/20 transition-all duration-300 p-6">
+            <img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png" alt="Personalized Service" class="w-16 h-16 mx-auto mb-4"/>
+            <h3 class="font-semibold text-lg mb-2">Personalized Service</h3>
+            <p class="opacity-50">Get matched with properties that suit your goals, budget, and lifestyle perfectly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROPERTIES -->
+<section
+  id="featured"
+  class="py-16 relative z-10 bg-gray-100 bg-[radial-gradient(circle,_#d1d5db_1px,_transparent_1px)] [background-size:20px_20px]"
+>
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-8 text-slate-800">Featured Properties</h2>
+    <div class="slider-container property-slider pb-8 -mb-8">
+      <div class="slider-track">
+        <div class="slider-item">
+          <div class="overflow-hidden shadow-md bg-white">
+            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80" class="w-full h-60 object-cover" alt="Modern Family Home" />
+            <div class="p-4">
+              <h3 class="font-semibold text-lg">Modern Family Home</h3>
+              <p class="text-slate-500 mb-2">3 Beds · 2 Baths · 2500 sqft</p>
+              <p class="font-bold text-blue-600">$540,000</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item">
+          <div class="overflow-hidden shadow-md bg-white">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80" class="w-full h-60 object-cover" alt="Luxury Downtown Condo" />
+            <div class="p-4">
+              <h3 class="font-semibold text-lg">Luxury Downtown Condo</h3>
+              <p class="text-slate-500 mb-2">2 Beds · 2 Baths · 1800 sqft</p>
+              <p class="font-bold text-blue-600">$720,000</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="slider-item">
+          <div class="overflow-hidden shadow-md bg-white">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" class="w-full h-60 object-cover" alt="Cozy Suburban Cottage" />
+            <div class="p-4">
+              <h3 class="font-semibold text-lg">Cozy Suburban Cottage</h3>
+              <p class="text-slate-500 mb-2">2 Beds · 1 Bath · 1200 sqft</p>
+              <p class="font-bold text-blue-600">$380,000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="backdrop-blur-md bg-black/30 py-16 relative z-10 text-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-10">What Our Clients Say</h2>
+    <div class="slider-container testimonial-slider">
+      <div class="slider-track">
+        <div class="slider-item text-center px-8 pb-6">
+          <p class="text-lg italic mb-6 opacity-80">"DreamHomes made our first home purchase smooth and stress-free. Highly recommended!"</p>
+          <h4 class="font-semibold">— Sarah & John, Quezon City</h4>
+        </div>
+        <div class="slider-item text-center px-8 pb-6">
+          <p class="text-lg italic mb-6 opacity-80">"Professional, responsive, and honest service. Found my condo in just a week!"</p>
+          <h4 class="font-semibold">— Mark D., Makati</h4>
+        </div>
+        <div class="slider-item text-center px-8 pb-6">
+          <p class="text-lg italic mb-6 opacity-80">"They guided me through the entire process — from property visits to final paperwork."</p>
+          <h4 class="font-semibold">— Angela S., Taguig</h4>
+        </div>
+      </div>
+      <div class="dots-container" id="testimonialDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section id="lead" class="py-16 relative z-10 bg-gray-100 bg-[radial-gradient(circle,_#d1d5db_1px,_transparent_1px)] [background-size:20px_20px] text-center">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-4 text-gray-800">Start Your Home Journey Today</h2>
+    <p class="text-gray-600 mb-8 max-w-xl mx-auto">Share your details below and our team will contact you to arrange your personalized home consultation.</p>
+    <form id="leadForm" class="space-y-4">
+      <input type="text" name="fullName" placeholder="Full Name" required class="w-full border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500 outline-none"/>
+      <input type="email" name="email" placeholder="Email Address" required class="w-full border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500 outline-none"/>
+      <input type="tel" name="phone" placeholder="Phone Number" required class="w-full border border-gray-300 p-3 focus:ring-2 focus:ring-blue-500 outline-none"/>
+      <textarea name="message" placeholder="Tell us what kind of home you're looking for..." class="w-full border border-gray-300 p-3 h-32 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+      <button type="submit" class="mx-auto px-10 py-4 bg-slate-900 text-white text-lg font-semibold rounded-full hover:bg-slate-800 shadow-lg hover:shadow-xl transition-all duration-300">Submit Request</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative z-10 bg-slate-800 text-gray-300 py-8">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <p class="mb-2">© 2025 DreamHomes. All rights reserved.</p>
+    <p class="text-sm text-gray-400">Your trusted partner in finding the perfect home.</p>
+  </div>
+</footer>
+
+<script>
+  // Hero Slider
+  function initHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    let current = 0;
+
+    function showSlide(n) {
+      slides[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    setInterval(() => showSlide(current + 1), 4000);
+  }
+
+  // Property Slider
+  function initPropertySlider() {
+    const track = document.querySelector('.property-slider .slider-track');
+    const items = document.querySelectorAll('.property-slider .slider-item');
+    let currentIndex = 0;
+    let slidesToShow = getSlidesToShow();
+
+    function getSlidesToShow() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 640) return 2;
+      return 1;
+    }
+
+    function updateSlider() {
+      const offset = -(currentIndex * (100 / slidesToShow));
+      track.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+      const maxIndex = items.length - slidesToShow;
+      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      updateSlider();
+    }
+
+    window.addEventListener('resize', () => {
+      slidesToShow = getSlidesToShow();
+      currentIndex = 0;
+      updateSlider();
+    });
+
+    setInterval(nextSlide, 3000);
+  }
+
+  // Testimonial Slider
+  function initTestimonialSlider() {
+    const track = document.querySelector('.testimonial-slider .slider-track');
+    const items = document.querySelectorAll('.testimonial-slider .slider-item');
+    const dotsContainer = document.getElementById('testimonialDots');
+    let currentIndex = 0;
+
+    // Create dots
+    items.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = `dot ${i === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.dot');
+
+    function goToSlide(n) {
+      currentIndex = n;
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % items.length;
+      goToSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 5000);
+  }
+
+  // Why Choose Us Slider
+  function initWhySlider() {
+   const track = document.querySelector('.why-slider .slider-track');
+    const items = document.querySelectorAll('.why-slider .slider-item');
+    let currentIndex = 0;
+    let slidesToShow = getSlidesToShow();
+
+    function getSlidesToShow() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 640) return 2;
+      return 1;
+    }
+
+    function updateSlider() {
+      const offset = -(currentIndex * (100 / slidesToShow));
+      track.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+      const maxIndex = items.length - slidesToShow;
+      currentIndex = currentIndex >= maxIndex ? 0 : currentIndex + 1;
+      updateSlider();
+    }
+
+    window.addEventListener('resize', () => {
+      slidesToShow = getSlidesToShow();
+      currentIndex = 0;
+      updateSlider();
+    });
+
+    setInterval(nextSlide, 3000);
+  }
+
+  // Form Handling
+  function initForm() {
+    const form = document.getElementById('leadForm');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      form.reset();
+      
+      // Hide success message after 4 seconds
+      setTimeout(() => {
+        window.location.href = 'thank-you/';
+      }, 1000);
+    });
+  }
+
+  // Initialize everything when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    initHeroSlider();
+    initPropertySlider();
+    initTestimonialSlider();
+    initWhySlider();
+    initForm();
+  });
+</script>
+
+</body>
+</html>
